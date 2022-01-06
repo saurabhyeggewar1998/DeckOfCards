@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -90,7 +91,23 @@ public class DeckOfCardsGame {
         }
         cardsDeck = temp;
         toDisplay(cardsDeck); // To display the cards this method is called.
-
+        cardDistribution(cardsDeck, player); // Calling Card Distribution method inside this method
         return cardsDeck;
+    }
+
+    /*
+    Created a method for equal distribution of cards.
+    Every player will be distributed 9 cards.
+     */
+    public static void cardDistribution(ArrayList<String> cardsDeck, int player) {
+        // This loop will itterate for no of players
+        for (int i = 0; i < player; i++) {
+            System.out.print("\nPlayer " + (i + 1) + " got cards:\n");
+            // This loop will itterate for no of cards for each player
+            for (int j = 0; j < 9; j++) {
+                System.out.print("\t" + cardsDeck.get(i+j*player));
+            }
+        }
+        System.out.println();
     }
 }
